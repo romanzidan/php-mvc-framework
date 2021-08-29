@@ -1,0 +1,15 @@
+{
+    "name": "rzr/myphp",
+    "authors": [
+        {
+            "name": "Roman Zidan Ramadhan",
+            "email": "romanzidanramadhan@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4":{
+            "app\\": "./"
+        }
+    },
+    "require": {}
+}
