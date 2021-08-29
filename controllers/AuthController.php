@@ -13,7 +13,7 @@ class AuthController extends Controller
             echo 'Handle submitted data';
             return;
         }
-
+        $this->setLayout('auth');
         return $this->render('auth/login');
     }
 
@@ -23,7 +23,7 @@ class AuthController extends Controller
             echo 'Handle submitted data';
             return;
         }
-
+        $this->setLayout('auth');
         return $this->render('auth/register');
     }
 }
