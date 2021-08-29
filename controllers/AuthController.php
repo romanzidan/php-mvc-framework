@@ -3,17 +3,28 @@
 namespace app\controllers;
 
 use app\core\Controller;
+use app\core\Request;
 
 class AuthController extends Controller
 {
-    public function login()
+    public function login(Request $request)
     {
-        return $this->render('login');
+        if($request->isPost()){
+            echo 'Handle submitted data';
+            return;
+        }
+
+        return $this->render('auth/login');
     }
 
-    public function register()
+    public function register(Request $request)
     {
-        return $this->render('register');
+        if($request->isPost()){
+            echo 'Handle submitted data';
+            return;
+        }
+
+        return $this->render('auth/register');
     }
 }
 
