@@ -20,9 +20,9 @@ class AuthController extends Controller
 
     public function register(Request $request)
     {
+        $registerModel = new RegisterModel();
         $errors = [];
         $this->setLayout('auth');
-        $registerModel = new RegisterModel();
 
         if($request->isPost()){
             $registerModel->loadData($request->getBody());
@@ -32,11 +32,12 @@ class AuthController extends Controller
                 return;
             }
             return $this->render('auth/register', [
-                'model' => $registerModel
+                'model' => $registerModel,
             ]);
         }
+
         return $this->render('auth/register', [
-            'model' => $registerModel
+            'model' => $registerModel,
         ]);
     }
 }
