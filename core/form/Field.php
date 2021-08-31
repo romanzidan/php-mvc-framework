@@ -13,14 +13,14 @@ class Field
 
     public string $type;
     public Model $model;
-    public string $name;
+    public string $label;
     public string $attribute;
 
-    public function __construct(Model $model, string $name, string $attribute)
+    public function __construct(Model $model, string $label, string $attribute)
     {
         $this->type = self::TYPE_TEXT;
         $this->model = $model;
-        $this->name = $name;
+        $this->label = $label;
         $this->attribute = $attribute;
     }
     
@@ -35,7 +35,7 @@ class Field
                 </div>
             </div>
         ', 
-            $this->name,
+            $this->label,
             $this->type,
             $this->attribute,
             $this->model->{$this->attribute},
