@@ -11,6 +11,11 @@ use app\models\User;
 
 class AuthController extends Controller
 {
+    public function __construct()
+    {
+        
+    }
+
     public function login(Request $request, Response $response)
     {
         $loginForm = new Login();
@@ -53,7 +58,13 @@ class AuthController extends Controller
     public function logout(Request $request, Response $response)
     {
         Application::$app->logout();
+        Application::$app->session->setFlash('success', 'Logout successfully');
         $response->redirect('/');
+    }
+    
+    public function profile()
+    {
+        return $this->render('profile');
     }
 }
 
