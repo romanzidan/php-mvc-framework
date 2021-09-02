@@ -1,3 +1,9 @@
+<?php
+
+    $this->title = 'Profile';
+
+?>
+
 <h1>Profile</h1>
 <form method="POST">
     <div class="mb-3">

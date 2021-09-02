@@ -1,16 +1,16 @@
+<?php
+
+use app\core\form\Form;
+
+$this->title = 'Contact';
+
+    $form = new Form;
+?>
 <h1>Contact Us</h1>
-<form method="POST">
-    <div class="mb-3">
-        <label for="subject" class="form-label">Subject</label>
-        <input type="text" class="form-control" id="subject" name="subject">
-    </div>
-    <div class="mb-3">
-        <label for="email" class="form-label">Email</label>
-        <input type="email" class="form-control" id="email" name="email">
-    </div>
-    <div class="mb-3">
-        <label for="body" class="form-label">Body</label>
-        <textarea class="form-control" id="body" name="body"></textarea>
-    </div>
+<?= Form::begin('', "post"); ?>
+    <?= $form->input($model, 'Subject', 'subject'); ?>
+    <?= $form->input($model, 'Email', 'email')->emailField(); ?>
+    <?= $form->textArea($model, 'Body', 'body'); ?>
+
     <button type="submit" class="btn btn-primary">Submit</button>
-</form>
+<?= Form::end(); ?>
